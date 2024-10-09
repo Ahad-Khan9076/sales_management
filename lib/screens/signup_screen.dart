@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:country_code_picker/country_code_picker.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+import '../components/reusable_components.dart';
 import 'login_screen.dart';
 
 class SignupScreen extends StatelessWidget {
@@ -37,7 +38,6 @@ class SignupScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 30),
-              // White Container with Rounded Borders
               Container(
                 padding: const EdgeInsets.all(20),
                 width: double.infinity,
@@ -63,19 +63,16 @@ class SignupScreen extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 20),
-                    // Social Media Buttons
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        // Google Button
-                        socialMediaButton(
+                        SocialMediaButton(
                           icon: FontAwesomeIcons.google,
                           text: 'Google',
                           onPressed: () {},
                         ),
                         const SizedBox(width: 20),
-                        // GitHub Button
-                        socialMediaButton(
+                        SocialMediaButton(
                           icon: FontAwesomeIcons.github,
                           text: 'GitHub',
                           onPressed: () {},
@@ -83,56 +80,28 @@ class SignupScreen extends StatelessWidget {
                       ],
                     ),
                     const SizedBox(height: 20),
-                    // Divider with Text OR
                     const Row(
                       children: [
-                        Expanded(
-                          child: Divider(
-                            thickness: 1,
-                            color: Colors.black45,
-                          ),
-                        ),
+                        Expanded(child: Divider(thickness: 1, color: Colors.black45)),
                         Padding(
                           padding: EdgeInsets.symmetric(horizontal: 8.0),
-                          child: Text(
-                            "OR",
-                            style: TextStyle(
-                              color: Colors.black54,
-                              fontSize: 16,
-                            ),
-                          ),
+                          child: Text("OR", style: TextStyle(color: Colors.black54, fontSize: 16)),
                         ),
-                        Expanded(
-                          child: Divider(
-                            thickness: 2,
-                            color: Colors.black45,
-                          ),
-                        ),
+                        Expanded(child: Divider(thickness: 2, color: Colors.black45)),
                       ],
                     ),
                     const SizedBox(height: 20),
-                    // First Name and Last Name Row
                     Row(
                       children: [
-                        Expanded(
-                          child: customTextField(
-                            label: "First Name",
-                            hintText: "First Name",
-                          ),
-                        ),
+                        Expanded(child: CustomTextField(label: "First Name", hintText: "First Name")),
                         const SizedBox(width: 10),
-                        Expanded(
-                          child: customTextField(
-                            label: "Last Name",
-                            hintText: "Last Name",
-                          ),
-                        ),
+                        Expanded(child: CustomTextField(label: "Last Name", hintText: "Last Name")),
                       ],
                     ),
                     const SizedBox(height: 20),
-                    customTextField(label: "Email", hintText: "example@email.com"),
+                    CustomTextField(label: "Email", hintText: "example@email.com"),
                     const SizedBox(height: 20),
-                    customTextField(label: "Password", hintText: "Password", obscureText: true),
+                    CustomTextField(label: "Password", hintText: "Password", obscureText: true),
                     const SizedBox(height: 20),
                     Row(
                       children: [
@@ -141,9 +110,7 @@ class SignupScreen extends StatelessWidget {
                           initialSelection: 'US',
                           favorite: ['+1', 'US'],
                         ),
-                        Expanded(
-                          child: customTextField(label: "Phone Number"),
-                        ),
+                        Expanded(child: CustomTextField(label: "Phone Number", hintText: "")),
                       ],
                     ),
                     const SizedBox(height: 30),
@@ -152,20 +119,14 @@ class SignupScreen extends StatelessWidget {
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.teal,
                         minimumSize: const Size(double.infinity, 50),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
                       ),
-                      child: const Text(
-                        "Signup",
-                        style: TextStyle(fontSize: 16, color: Colors.white),
-                      ),
+                      child: const Text("Signup", style: TextStyle(fontSize: 16, color: Colors.white)),
                     ),
                   ],
                 ),
               ),
               const SizedBox(height: 20),
-              // Already have an account? Login
               GestureDetector(
                 onTap: () {
                   Get.to(LoginScreen());
@@ -177,10 +138,7 @@ class SignupScreen extends StatelessWidget {
                     children: [
                       TextSpan(
                         text: "Login",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          decoration: TextDecoration.underline,
-                        ),
+                        style: TextStyle(fontWeight: FontWeight.bold, decoration: TextDecoration.underline),
                       ),
                     ],
                   ),
@@ -189,46 +147,6 @@ class SignupScreen extends StatelessWidget {
             ],
           ),
         ),
-      ),
-    );
-  }
-
-  // Custom TextField Widget
-  Widget customTextField({String label = '', String hintText = '', bool obscureText = false}) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          label,
-          style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
-        ),
-        TextField(
-          obscureText: obscureText,
-          decoration: InputDecoration(
-            hintText: hintText,
-            contentPadding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(15),
-              borderSide: BorderSide(color: Colors.grey[400]!),
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-
-  // Social Media Button Widget
-  Widget socialMediaButton({required IconData icon, required String text, required VoidCallback onPressed}) {
-    return ElevatedButton.icon(
-      onPressed: onPressed,
-      icon: Icon(icon, color: Colors.teal),
-      label: Text(text, style: TextStyle(color: Colors.black)),
-      style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.white,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(15),
-        ),
-        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
       ),
     );
   }
