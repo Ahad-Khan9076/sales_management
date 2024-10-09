@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:sales_management/screens/admin_dashboard.dart';
+import 'package:sales_management/screens/forgot_password_screen.dart';
 import '../components/reusable_components.dart';
 
 
@@ -65,7 +66,10 @@ class _LoginScreenState extends State<LoginScreen> {
                     CustomTextField(label: "Password", hintText: "Password", obscureText: true),
                     const SizedBox(height: 20),
                     GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        Get.to(ForgetPasswordScreen());
+                        const GetSnackBar(title: 'moving',);
+                      },
                       child: const Align(
                         alignment: Alignment.centerRight,
                         child: Text(
