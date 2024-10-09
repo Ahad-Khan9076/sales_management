@@ -16,7 +16,7 @@ class SignupScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const SizedBox(height: 30),
+              const SizedBox(height: 10),
               const Center(
                 child: Text(
                   "Welcome to the App",
@@ -48,7 +48,7 @@ class SignupScreen extends StatelessWidget {
                     BoxShadow(
                       color: Colors.black.withOpacity(0.1),
                       blurRadius: 10,
-                      offset: Offset(0, 5),
+                      offset: const Offset(0, 5),
                     ),
                   ],
                 ),
@@ -82,7 +82,7 @@ class SignupScreen extends StatelessWidget {
                     const SizedBox(height: 20),
                     const Row(
                       children: [
-                        Expanded(child: Divider(thickness: 1, color: Colors.black45)),
+                        Expanded(child: Divider(thickness: 2, color: Colors.black45)),
                         Padding(
                           padding: EdgeInsets.symmetric(horizontal: 8.0),
                           child: Text("OR", style: TextStyle(color: Colors.black54, fontSize: 16)),
@@ -93,35 +93,57 @@ class SignupScreen extends StatelessWidget {
                     const SizedBox(height: 20),
                     Row(
                       children: [
-                        Expanded(child: CustomTextField(label: "First Name", hintText: "First Name")),
+                        Expanded(child: CustomTextField(label: "First Name", hintText: "BitStorm")),
                         const SizedBox(width: 10),
-                        Expanded(child: CustomTextField(label: "Last Name", hintText: "Last Name")),
+                        Expanded(child: CustomTextField(label: "Last Name", hintText: "Solutions")),
                       ],
                     ),
                     const SizedBox(height: 20),
-                    CustomTextField(label: "Email", hintText: "example@email.com"),
+                    CustomTextField(label: "Email", hintText: "bitstormSolution@gmail.com"),
                     const SizedBox(height: 20),
                     CustomTextField(label: "Password", hintText: "Password", obscureText: true),
                     const SizedBox(height: 20),
-                    Row(
-                      children: [
-                        CountryCodePicker(
-                          onChanged: (country) {},
-                          initialSelection: 'US',
-                          favorite: ['+1', 'US'],
-                        ),
-                        Expanded(child: CustomTextField(label: "Phone Number", hintText: "")),
-                      ],
+                    Container(
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.grey[400]!), // Border color for the combined phone field
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      child: Row(
+                        children: [
+                          CountryCodePicker(
+                            onChanged: (country) {},
+                            initialSelection: 'US',
+                            favorite: ['+1', 'US'],
+                            showCountryOnly: false,
+                            showFlag: true,
+                            alignLeft: false,
+                            padding: const EdgeInsets.symmetric(horizontal: 8),
+                          ),
+                          Expanded(
+                            child: TextField(
+                              decoration: InputDecoration(
+                                hintText: 'Phone Number',
+                                hintStyle: TextStyle(color: Colors.grey[400]), // Light grey hint text color
+                                border: InputBorder.none,
+                                contentPadding: const EdgeInsets.symmetric(vertical: 15),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                     const SizedBox(height: 30),
-                    ElevatedButton(
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.teal,
-                        minimumSize: const Size(double.infinity, 50),
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                    SizedBox(
+                      width: 200, // Adjusted button width to be narrower
+                      child: ElevatedButton(
+                        onPressed: () {},
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.teal,
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                          padding: const EdgeInsets.symmetric(vertical: 14),
+                        ),
+                        child: const Text("Signup", style: TextStyle(fontSize: 16, color: Colors.white)),
                       ),
-                      child: const Text("Signup", style: TextStyle(fontSize: 16, color: Colors.white)),
                     ),
                   ],
                 ),

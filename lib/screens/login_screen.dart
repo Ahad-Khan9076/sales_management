@@ -23,7 +23,7 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 40),
+              const SizedBox(height: 10),
               const Center(
                 child: Text(
                   "Welcome Back",
@@ -60,7 +60,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                     ),
                     const SizedBox(height: 20),
-                    CustomTextField(label: "Email", hintText: "example@email.com"),
+                    CustomTextField(label: "Email", hintText: "bitstormSolutions@gmail.com"),
                     const SizedBox(height: 20),
                     CustomTextField(label: "Password", hintText: "Password", obscureText: true),
                     const SizedBox(height: 20),
@@ -85,8 +85,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.teal,
-                        minimumSize: const Size(double.infinity, 50),
+                        // minimumSize: const Size(double.infinity, 50),
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                        padding: const EdgeInsets.symmetric(horizontal: 64,vertical: 10),
                       ),
                       child: const Text("Login", style: TextStyle(fontSize: 16, color: Colors.white)),
                     ),
