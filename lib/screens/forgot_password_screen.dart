@@ -14,7 +14,7 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
     final email = _emailController.text.trim();
     if (email.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text("Please enter your email address")),
+        const SnackBar(content: Text("Please enter your email address")),
       );
       return;
     }
@@ -52,7 +52,7 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
             children: [
               // Header Section
               Container(
-                height: 140,
+                height: 160,
                 decoration: const BoxDecoration(
                   color: Colors.teal,
                   borderRadius: BorderRadius.only(
@@ -68,7 +68,7 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                         size: 80,
                         color: Colors.white,
                       ),
-                      SizedBox(height: 10),
+                      SizedBox(height: 6),
                       Text(
                         "Forgot Password?",
                         style: TextStyle(
@@ -83,7 +83,7 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
               ),
 
               // Instruction Text
-              const SizedBox(height: 30),
+              const SizedBox(height: 12),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 30.0),
                 child: Text(
@@ -95,7 +95,7 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                   textAlign: TextAlign.center,
                 ),
               ),
-              const SizedBox(height: 30),
+              const SizedBox(height: 12),
 
               // Email Input Container
               Padding(
@@ -123,7 +123,7 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                           color: Colors.teal,
                         ),
                       ),
-                      const SizedBox(height: 20),
+                      const SizedBox(height: 10),
                       TextField(
                         controller: _emailController,
                         keyboardType: TextInputType.emailAddress,
@@ -145,14 +145,15 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                           ),
                         ),
                       ),
-                      const SizedBox(height: 30),
+                      const SizedBox(height: 10),
                       ElevatedButton(
                         onPressed: _sendPasswordResetEmail,
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.teal,
                           minimumSize: const Size(double.infinity, 50),
+                          padding: const EdgeInsets.symmetric(horizontal: 64,vertical: 10),
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: BorderRadius.circular(10),
                           ),
                         ),
                         child: const Text(

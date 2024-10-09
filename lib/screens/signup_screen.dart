@@ -16,7 +16,7 @@ class SignupScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const SizedBox(height: 10),
+              const SizedBox(height: 4),
               const Center(
                 child: Text(
                   "Welcome to the App",
@@ -27,7 +27,7 @@ class SignupScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 6),
               const Center(
                 child: Text(
                   "Enter your credentials",
@@ -37,7 +37,7 @@ class SignupScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(height: 30),
+              const SizedBox(height: 10),
               Container(
                 padding: const EdgeInsets.all(20),
                 width: double.infinity,
@@ -62,7 +62,7 @@ class SignupScreen extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 6),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -79,7 +79,7 @@ class SignupScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 4),
                     const Row(
                       children: [
                         Expanded(child: Divider(thickness: 2, color: Colors.black45)),
@@ -90,7 +90,7 @@ class SignupScreen extends StatelessWidget {
                         Expanded(child: Divider(thickness: 2, color: Colors.black45)),
                       ],
                     ),
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 4),
                     Row(
                       children: [
                         Expanded(child: CustomTextField(label: "First Name", hintText: "BitStorm")),
@@ -98,11 +98,11 @@ class SignupScreen extends StatelessWidget {
                         Expanded(child: CustomTextField(label: "Last Name", hintText: "Solutions")),
                       ],
                     ),
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 10),
                     CustomTextField(label: "Email", hintText: "bitstormSolution@gmail.com"),
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 10),
                     CustomTextField(label: "Password", hintText: "Password", obscureText: true),
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 10),
                     Container(
                       decoration: BoxDecoration(
                         border: Border.all(color: Colors.grey[400]!), // Border color for the combined phone field
@@ -132,7 +132,7 @@ class SignupScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-                    const SizedBox(height: 30),
+                    const SizedBox(height: 10),
                     SizedBox(
                       width: 200, // Adjusted button width to be narrower
                       child: ElevatedButton(

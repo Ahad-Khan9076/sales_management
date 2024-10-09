@@ -45,7 +45,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 10),
 
               Container(
                 padding: const EdgeInsets.all(20),
@@ -60,11 +60,11 @@ class _LoginScreenState extends State<LoginScreen> {
                       "Login to your account",
                       style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                     ),
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 10),
                     CustomTextField(label: "Email", hintText: "bitstormSolutions@gmail.com"),
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 10),
                     CustomTextField(label: "Password", hintText: "Password", obscureText: true),
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 10),
                     GestureDetector(
                       onTap: () {
                         Get.to(ForgetPasswordScreen());
@@ -78,7 +78,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
                     ),
-                    const SizedBox(height: 20),
+                    const SizedBox(height:10),
                     ElevatedButton(
                       onPressed: () {
                         Get.to(const AdminDashboard());
@@ -97,12 +97,12 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     const SizedBox(height: 10,),
                     const Text('OR'),
-                    const SizedBox(height: 20,),
+                    const SizedBox(height: 10,),
                     SocialMediaButton(icon: FontAwesomeIcons.google, text:'Login with Google', onPressed: (){}),
                   ],
                 ),
               ),
-              const SizedBox(height: 20,),
+              const SizedBox(height: 10,),
               GestureDetector(
                 onTap: (){
                     const GetSnackBar(
