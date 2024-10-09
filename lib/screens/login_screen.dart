@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+import 'package:sales_management/screens/admin_dashboard.dart';
 import '../components/reusable_components.dart';
 
 
@@ -75,7 +76,13 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     const SizedBox(height: 20),
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.to(const AdminDashboard());
+                        const GetSnackBar(
+                          title:'Login Sucessfuly',
+                          snackPosition:SnackPosition.TOP,
+                        );
+                      },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.teal,
                         minimumSize: const Size(double.infinity, 50),
@@ -93,7 +100,7 @@ class _LoginScreenState extends State<LoginScreen> {
               const SizedBox(height: 20,),
               GestureDetector(
                 onTap: (){
-                    GetSnackBar(
+                    const GetSnackBar(
                     snackPosition: SnackPosition.TOP,
                       title: 'Signup',
                     titleText: Text('Get ready to get Signup in the account'),
