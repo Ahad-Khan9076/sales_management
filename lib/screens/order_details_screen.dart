@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'edit_order_screen.dart'; // Make sure to import the EditOrderScreen
 
 class OrderDetailsScreen extends StatelessWidget {
   final Map<String, String> order;
@@ -11,10 +12,24 @@ class OrderDetailsScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Order Details"),
         backgroundColor: Colors.teal,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.edit, color: Colors.white),
+            onPressed: () {
+              // Navigate to EditOrderScreen with the current order details
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => EditOrderScreen(order: order),
+                ),
+              );
+            },
+          ),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: SingleChildScrollView(  // Allow scrolling if content overflows
+        child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -33,7 +48,7 @@ class OrderDetailsScreen extends StatelessWidget {
               const SizedBox(height: 20),
 
               _buildSectionTitle("Product Details"),
-              _buildProductTable(),  // Use a table for product details
+              _buildProductTable(),
             ],
           ),
         ),
@@ -56,7 +71,7 @@ class OrderDetailsScreen extends StatelessWidget {
   }
 
   Widget _buildDetailRow(String label, String value) {
-    return Card(  // Add card for elevation and background
+    return Card(
       margin: const EdgeInsets.symmetric(vertical: 4),
       child: Padding(
         padding: const EdgeInsets.all(12),
@@ -85,7 +100,6 @@ class OrderDetailsScreen extends StatelessWidget {
   }
 
   Widget _buildProductTable() {
-    // Sample product details, you can replace this with actual data
     final products = [
       {"name": "Product A", "quantity": "1"},
       {"name": "Product B", "quantity": "1"},
@@ -105,7 +119,7 @@ class OrderDetailsScreen extends StatelessWidget {
                 Expanded(child: Text("Quantity", style: TextStyle(fontWeight: FontWeight.bold))),
               ],
             ),
-            const Divider(),  // Add a divider to separate headers from the content
+            const Divider(),
             ListView.builder(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
