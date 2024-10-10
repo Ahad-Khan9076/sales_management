@@ -41,7 +41,7 @@ class HomePage extends StatelessWidget {
           const SizedBox(height: 10),
           _buildGraphCard('Vendor Activity', BarChartWidget(
             barGroups: [
-              BarChartGroupData(x: 0, barRods: [BarChartRodData(toY: 7, color: Colors.teal)]),
+              BarChartGroupData(x: 0, barRods: [BarChartRodData(toY: 4, color: Colors.teal)]),
               BarChartGroupData(x: 1, barRods: [BarChartRodData(toY: 6, color: Colors.teal)]),
               BarChartGroupData(x: 2, barRods: [BarChartRodData(toY: 8, color: Colors.teal)]),
             ],
